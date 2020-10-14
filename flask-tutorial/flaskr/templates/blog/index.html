@@ -13,10 +13,16 @@
     <header>
         <div>
             <h1>{{ post['title'] }}</h1>
-            <div class="about">Post by {{ post['username'] }}</div>
+            <div class="about">Post by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
         </div>
+        {% if g.user['id'] == post['author_id'] %}
+        <a href="{{ url_for('blog.update', id = post['id']) }}" class="action">Edit</a>
+        {% endif %}
     </header>
+    <p class="body">{{ post['body'] }}</p>
 </article>
-
+{% if not loop.last %}
+<hr>
+{% endif %}
 {% endfor %}
 {% endblock %}
