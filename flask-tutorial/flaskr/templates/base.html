@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <title>{% block title %}{% endblock %} - Flaskr</title>
-<link rel="stylesheet" href="{{ url_for('static', filename = 'static.css')}}">
+<link rel="stylesheet" href={{ url_for('static', filename='style.css') }}>
 <nav>
     <ul>
         {% if g.user %}
