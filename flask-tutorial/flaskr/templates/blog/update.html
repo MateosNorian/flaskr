@@ -15,8 +15,7 @@
     <input type="submit" value="Save">
 </form>
 <hr>
-<form method="post">
+<form action="{{ url_for('blog.delete', id=post['id']) }}" method="post">
     <input name="delete" type="submit" value="Delete" class="danger" onlcick="return confirm('Are you sure?');">
-
 </form>
 {% endblock %}
